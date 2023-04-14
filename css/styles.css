@@ -12,3 +12,6 @@ input {
     font-family: 'Mulish';
     font-weight: 400;
 }
+.img-object-fit{
+    aspect-ratio: 1.4/1;
+}
