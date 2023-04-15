@@ -25,6 +25,7 @@ const createNewCard = (stay)=>{
     return $card
 }
 const showCards= (stays)=>{
+    $cards_container.innerHTML = "";
     stays.forEach(stay=>{
         $cards_container.appendChild(createNewCard(stay))
     })
