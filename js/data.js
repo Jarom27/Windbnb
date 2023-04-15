@@ -10,7 +10,9 @@ const getData = async () => {
 
   return data;
 }
-
+const getDataFiltered = (filtro)=>{
+    
+}
 export default {
   getData
 }

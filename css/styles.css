@@ -22,3 +22,14 @@ input {
     max-width: 360px;
     min-width: 280px;
 }
+.search-text-button{
+    font-family: 'Mulish';
+    font-size: 14px;
+}
+.search-icon{
+    font-size: 18px;
+    box-sizing: border-box;
+    top: 3px;
+    position: relative;
+    margin-right: 6px;
+}
