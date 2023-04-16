@@ -45,7 +45,7 @@
       	<div class="modal-dialog modal-fullscreen h-75">
 			<!--Menu para telefonos-->
           	<div class="modal-content d-lg-none">
-            	<div class="modal-header">
+            	<div class="modal-header border-0">
                 	<p class="modal-title fw-bold">Edit your search</p>
                   	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               	</div>
@@ -64,8 +64,10 @@
                       	</div>
                   	</div>
 				</div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger fs-4 rounded-pill"><span class="material-symbols-outlined text-white">search</span>Search</button>
+                <div class="modal-footer border-0">
+                    <div class="col p-0 row justify-content-center">
+						<button id="search-button" type="submit" class="btn bg-pink-danger p-3 fs-4 rounded-4 col-4" data-bs-dismiss="modal"><span class="material-symbols-outlined text-white search-icon">search</span><span class="mb-1 search-text-button text-white">Search</span></button>
+					</div>
                 </div>
           	</div>
 			<!--Menu para Laptops y computadoras-->
@@ -73,16 +75,16 @@
 				<div class="modal-body">
 					<div class="container">
 						<div class="input-group rounded-4 border row">
-							<div class="form-floating input-group-item col p-0">
-								<input type="email" class="form-control fs-4 rounded-4 border-0 focus-ring" style="--bs-focus-ring-color: #333333; --bs-focus-ring-width: 1px" id="locationInput" placeholder="Add location">
-								<label for="locationInput" class="fs-4">Add location</label>
+							<div class="form-floating input-group-item col p-0 fs-4">
+								<input type="email" class="form-control rounded-4 border-0 focus-ring" style="--bs-focus-ring-color: #333333; --bs-focus-ring-width: 1px" id="locationInput" placeholder="Add location">
+								<label for="locationInput" class="">Add location</label>
 							</div>
 							<div class="form-floating input-group-item col p-0">
-								<input type="email" class="form-control fs-4 rounded-4 border-0 focus-ring" style="--bs-focus-ring-color: #333333; --bs-focus-ring-width: 1px" id="guestInput" placeholder="Add guests">
-								<label for="guestInput" class="fs-4">Add guests</label>
+								<input type="email" class="form-control rounded-4 border-0 focus-ring" style="--bs-focus-ring-color: #333333; --bs-focus-ring-width: 1px" id="guestInput" placeholder="Add guests">
+								<label for="guestInput" class="">Add guests</label>
 							</div>
 							<div class="col p-0 row justify-content-center">
-								<button id="search-button" type="submit" class="btn btn-danger px-3 fs-4 rounded-pill rounded-4 col-4" data-bs-dismiss="modal"><span class="material-symbols-outlined text-white search-icon">search</span><span class="mb-1 search-text-button">Search</span></button>
+								<button id="search-button" type="submit" class="btn bg-pink-danger px-3 fs-4 rounded-pill rounded-4 col-4" data-bs-dismiss="modal"><span class="material-symbols-outlined text-white search-icon">search</span><span class="mb-1 search-text-button">Search</span></button>
 							</div>
 						</div>
 						<div class="container">

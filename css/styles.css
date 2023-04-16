@@ -10,6 +10,9 @@ font-family: 'Mulish', sans-serif;
     font-size: 10px;
     box-sizing: border-box;
 }
+:root{
+    --bg-pink-danger : #EB5757E5;
+}
 input {
     font-family: 'Mulish';
     font-weight: 400;
@@ -32,4 +35,7 @@ input {
     top: 3px;
     position: relative;
     margin-right: 6px;
+}
+.bg-pink-danger{
+    background-color: var(--bg-pink-danger);
 }
