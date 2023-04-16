@@ -3,6 +3,7 @@ Aqui van todas las funciones o variables relacionadas
 con la manipulación del DOM en la aplicación
 */
 const $cards_container = document.getElementById("cards-container");
+const $option_modal_by_input = document.getElementById("options-xl");
 const createNewCard = (stay)=>{
     let $card = document.createElement("div");
     $card.className = "card d-flex flex-column col-12 col-md-4 border-0 pb-5"
@@ -24,12 +25,54 @@ const createNewCard = (stay)=>{
     `
     return $card
 }
+const showLocations = (locations)=>{
+    $option_modal_by_input.innerHTML = ""
+    const $fragment = document.createDocumentFragment();
+    locations.forEach(location =>{
+        let list_item = document.createElement("li");
+        list_item.className = "list-group-item border-0 mb-3"
+        list_item.innerHTML = `
+        <span class="material-symbols-outlined location-pin text-gray-secondary">location_on</span>
+        <span class="text-gray-secondary location-text">${location}, Finland</span>`
+        $fragment.appendChild(list_item);
+    })
+    $option_modal_by_input.appendChild($fragment);
+}
 const showCards= (stays)=>{
     $cards_container.innerHTML = "";
     stays.forEach(stay=>{
         $cards_container.appendChild(createNewCard(stay))
     })
 }
+const showGuestOptions = ()=>{
+    $option_modal_by_input.innerHTML ="";
+    let $container_options_guest_control = document.createElement("div");
+    $container_options_guest_control.className = "container col-4";
+    $container_options_guest_control.innerHTML = 
+    `<ul class="list-group" id="options-guests-xl">
+        <div class="list-group-item border-0 mb-5">
+            <p class="gray-lighter-text"><span class="fw-bold gray-darker-text">Adults</span>
+            <br>Ages 13 or above
+            </p>
+            <div class="input-group control-guest">
+                <input class="form-control input-group-item w-5" type="button" value="-">
+                <span class="input-group-text">0</span>
+                <input class="form-control input-group-item w-5" type="button" value="+">
+            </div>
+        </div>
+        <div class="list-group-item border-0">
+            <p class="gray-lighter-text"><span class="fw-bold gray-darker-text">Children</span>
+            <br>Ages 2-12
+            </p>
+            <div class="input-group control-guest">
+                <input class="form-control input-group-item w-5" type="button" value="-">
+                <span class="input-group-text">0</span>
+                <input class="form-control input-group-item w-5" type="button" value="+">
+            </div>
+        </div>
+    </ul>`;
+    $option_modal_by_input.appendChild($container_options_guest_control);
+}
 export default{
-    showCards
+    showCards,showLocations,showGuestOptions
 }

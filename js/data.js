@@ -7,12 +7,18 @@ const getData = async () => {
   const data = fetch('./stays.json')
     .then(response => response.json())
     .then( json => json)
-
   return data;
 }
-const getDataFiltered = (filtro)=>{
+const getDataLocations = (data)=>{
+    const places = []
     
+    data.forEach(stay => {
+        if(!places.includes(stay.city)){
+          places.push(stay.city);
+        }
+    });
+    return places;
 }
 export default {
-  getData
+  getData, getDataLocations
 }

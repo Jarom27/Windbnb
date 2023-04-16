@@ -12,6 +12,9 @@ font-family: 'Mulish', sans-serif;
 }
 :root{
     --bg-pink-danger : #EB5757E5;
+    --gray-secondary : #4F4F4F;
+    --gray-darker-text : #333333;
+    --gray-lighter-text : #BDBDBD;
 }
 input {
     font-family: 'Mulish';
@@ -36,6 +39,43 @@ input {
     position: relative;
     margin-right: 6px;
 }
+.input{
+    font-family: 'Mulish';
+}
 .bg-pink-danger{
     background-color: var(--bg-pink-danger);
+}
+.location-pin{
+    margin-right: 5px;
+    position:relative;
+    top: 6px;
+}
+.location-text{
+    font-size: 14px;
+    font-family: 'Mulish';
+}
+.text-gray-secondary{
+    color: var(--gray-secondary);
+}
+.bg-gray-secondary{
+     background-color: var(--gray-secondary);
+}
+.control-guest{
+    width: 80px;
+}
+.gray-darker-text{
+    color: var(--gray-darker-text);
+}
+.location-pin {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 300,
+  'GRAD' -25,
+  'opsz' 40
+}
+.gray-lighter-text{
+    color: var(--gray-lighter-text);
+}
+#search-button:hover .search-button{
+    color: var(--bg-pink-danger)!important;
 }
