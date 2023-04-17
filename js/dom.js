@@ -41,6 +41,10 @@ const showLocations = (container,locations)=>{
 }
 const showCards= (stays)=>{
     $cards_container.innerHTML = "";
+    if (stays.length == 0) {
+        $cards_container.innerHTML = "<h1>Sin resultados para la busqueda</h1>"
+        return;
+    }
     stays.forEach(stay=>{
         $cards_container.appendChild(createNewCard(stay))
     })

@@ -74,7 +74,15 @@ input {
   'opsz' 40
 }
 .gray-lighter-text{
-    color: var(--gray-lighter-text);
+    color: var(--gray-lighter-text) !important;
+}
+.inputs-bar{
+    padding: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 1.2rem;
+}
+.form-control::placeholder {
+    padding-bottom: 1rem !important;
 }
 #search-button:hover .search-button{
     color: var(--bg-pink-danger)!important;

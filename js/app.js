@@ -25,8 +25,9 @@ let number_guest = 0;
 
 function buscarValores(location="",guest,stays) {
     let valores_filtrados= stays.filter(stay =>{
-        return (stay.city.toLowerCase().includes(location.toLowerCase()) && location != "") || stay.maxGuests <= guest;
+        return (stay.city.toLowerCase().includes(location.toLowerCase()) && location != "") || guest <= stay.maxGuests;
     })
+    console.log(valores_filtrados.length);
     return valores_filtrados;
 }
 //Activar el menu de busqueda al enfocar en cualquiera de estos elementos. Esto según la documentacion
