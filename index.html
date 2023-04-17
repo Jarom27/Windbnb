@@ -31,6 +31,7 @@
 </head>
 
 <body class="container">
+   <!-- Inicio de la cabecera con el logo y la barra de navegación -->
   <header class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-lg-4 mt-3 gap-5 ">
     <div class="d-flex align-self-start align-self-md-center">
       <img src="./img/logo.png" alt="">
@@ -41,6 +42,7 @@
         <input type="text" class="fs-4 col-3 form-control text-center" placeholder="Add guests" id="guests" data-bs-toggle="modal" data-bs-target="#modal_search" readonly>
         <span class="rounded-end-4 col-2 fs-3 material-symbols-outlined bg-white text-danger p-3 pe-1 pointer input-group-text">search</span>
     </article>
+	<!-- Inicio de barra de navegación para los dos dispositivos -->
     <div class="modal" id="modal_search">
       	<div class="modal-dialog modal-fullscreen h-75">
 			<!--Menu para telefonos-->
@@ -52,19 +54,25 @@
               	<div class="modal-body">
                 	<div class="container">
                       	<div class="form-floating">
-                          	<input type="email" class="form-control fs-4 rounded-4 rounded-bottom-0" id="floatingInput" placeholder="Add location">
-                          	<label for="floatingInput" class="fs-4 text-uppercase">Add location</label>
+                          	<input type="email" class="form-control fs-4 rounded-4 rounded-bottom-0" id="LocationfloatingInput">
+                          	<label for="LocationfloatingInput" class="">Add location</label>
                       	</div>
                       	<div class="form-floating">
-                          	<input type="email" class="form-control fs-4 rounded-4 rounded-top-0" id="floatingInput" placeholder="Add guests">
-                          	<label for="floatingInput" class="fs-4">Add guests</label>
+                          	<input type="email" class="form-control fs-4 rounded-4 rounded-top-0" id="GuestfloatingInput">
+                          	<label for="GuestfloatingInput" class="">Add guests</label>
                       	</div>
-                      	
+                      	<div class="container">
+							<div class="list-group mt-5 row" id="options-xs">
+								
+							</div>
+						</div>
                   	</div>
 				</div>
                 <div class="modal-footer border-0">
                     <div class="col p-0 row justify-content-center">
-						<button id="" type="submit" class="btn bg-pink-danger p-3 fs-4 rounded-4 col-4" data-bs-dismiss="modal"><span class="material-symbols-outlined text-white search-icon">search</span><span class="mb-1 search-text-button text-white">Search</span></button>
+						<button id="phone-search-button" type="submit" class="btn bg-pink-danger p-3 fs-4 rounded-4 col-4" data-bs-dismiss="modal">
+							<span class="material-symbols-outlined text-white search-icon">search</span>
+							<span class="mb-1 search-text-button text-white">Search</span></button>
 					</div>
                 </div>
           	</div>
@@ -96,10 +104,12 @@
 			</div>
       	</div>
     </div>
+	<!-- Final de barra de navegación para los dos dispositivos -->
+<!-- Final de la cabecera -->
   </header>
   <main>
     <div class="d-flex mt-5 justify-content-between mb-5">
-      <h1 class="fs-1 mx-2 fw-bold">Stays in 
+      <h1 class="fs-1 mx-2 fw-bold">Stays in Finland
         <!-- Aquí va el lugar -->
         <span id="place"></span>
       </h1>

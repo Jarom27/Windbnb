@@ -3,7 +3,7 @@ Aqui van todas las funciones o variables relacionadas
 con la manipulación del DOM en la aplicación
 */
 const $cards_container = document.getElementById("cards-container");
-const $option_modal_by_input = document.getElementById("options-xl");
+const $option_modal_by_input = null;
 const createNewCard = (stay)=>{
     let $card = document.createElement("div");
     $card.className = "card d-flex flex-column col-12 col-md-4 border-0 pb-5"
@@ -11,7 +11,7 @@ const createNewCard = (stay)=>{
         <div class="img-object-fit card-img-top">
             <img class="object-fit-cover rounded-4  w-100 h-100" src="${stay.photo}">
         </div>
-        <div class="ps-0 container mt-4 d-flex justify-content-between">
+        <div class="ps-0 container mt-3 d-flex justify-content-between">
             ${stay.superHost ? '<p class="text-uppercase border py-2 px-3 rounded-pill fs-5">super host</p>':''}
             <div class="py-2">
                 <p class="text-secondary-emphasis fs-5 text-opacity-75 fw-semibold">${stay.type} ${stay.beds !=null ? `, ${stay.beds} beds` : ""}</p>
@@ -25,7 +25,8 @@ const createNewCard = (stay)=>{
     `
     return $card
 }
-const showLocations = (locations)=>{
+const showLocations = (container,locations)=>{
+    const $option_modal_by_input = document.getElementById(container);
     $option_modal_by_input.innerHTML = ""
     const $fragment = document.createDocumentFragment();
     locations.forEach(location =>{
@@ -44,7 +45,8 @@ const showCards= (stays)=>{
         $cards_container.appendChild(createNewCard(stay))
     })
 }
-const showGuestOptions = ()=>{
+const showGuestOptions = (container)=>{
+    const $option_modal_by_input = document.getElementById(container);
     $option_modal_by_input.innerHTML ="";
     let $container_options_guest_control = document.createElement("div");
     $container_options_guest_control.className = "container col-4";
