@@ -1,4 +1,3 @@
-'use strict'
 import data from './data.js';
 import dom from './dom.js';
 
@@ -19,17 +18,13 @@ const $locationInput = document.getElementById("locationInput");
 const $guestInput = document.getElementById("guestInput");
 const $search_button  = document.getElementById("search-button");
 
+console.log($search_button)
+console.log($search_buttonPhone)
 // Valores para las busquedas
 let location_text = "";
 let number_guest = 0;
 
-function buscarValores(location="",guest,stays) {
-    let valores_filtrados= stays.filter(stay =>{
-        return (stay.city.toLowerCase().includes(location.toLowerCase()) && location != "") || guest <= stay.maxGuests;
-    })
-    console.log(valores_filtrados.length);
-    return valores_filtrados;
-}
+
 //Activar el menu de busqueda al enfocar en cualquiera de estos elementos. Esto según la documentacion
 //de Boostrap
 $modal_search.addEventListener('shown.bs.modal',e=>{
@@ -60,9 +55,7 @@ $locationInputPhone.addEventListener('keyup', e=>{
     location_text = $locationInputPhone.value;
     $location_search_bar.value = $locationInputPhone.value;
 });
-$search_buttonPhone.addEventListener('click',e=>{
-    dom.showCards(buscarValores(location_text,number_guest,stays));
-})
+
 //Eventos para barra Desktop
 $locationInput.addEventListener('focusin', e=>{
     $locationInput.value = "";
@@ -88,9 +81,19 @@ $guestInput.addEventListener('keyup', e=>{
     }
      
 });
-
+$search_buttonPhone.addEventListener('click',e=>{
+    console.log(location_text, number_guest);
+    let valores_filtrados = stays.filter(stay =>{
+        return (stay.city.toLowerCase().includes(location_text.toLowerCase()) && location_text != "") || (number_guest <= stay.maxGuests && number_guest !== 0);
+    })
+    dom.showCards(valores_filtrados);
+})
 $search_button.addEventListener('click',e=>{
-    dom.showCards(buscarValores(location_text,number_guest,stays));
+    console.log(location_text, number_guest);
+    let valores_filtrados = stays.filter(stay =>{
+        return (stay.city.toLowerCase().includes(location_text.toLowerCase()) && location_text != "") || (number_guest <= stay.maxGuests && number_guest !== 0);
+    })
+    console.log(valores_filtrados);
+    dom.showCards(valores_filtrados);
 });
-
 dom.showCards(stays);
